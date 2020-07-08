@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0696F424B4AE750056E045 /* TZPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0696F324B4AE750056E045 /* TZPerson.m */; };
+		1B0696F724B4AE830056E045 /* TZStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0696F624B4AE830056E045 /* TZStudent.m */; };
+		1B0696FA24B4AE9F0056E045 /* NSObject+addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0696F924B4AE9F0056E045 /* NSObject+addition.m */; };
 		1B57D8CD24AA19AD0008F8AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B57D8CC24AA19AD0008F8AA /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B0696F224B4AE750056E045 /* TZPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TZPerson.h; sourceTree = "<group>"; };
+		1B0696F324B4AE750056E045 /* TZPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TZPerson.m; sourceTree = "<group>"; };
+		1B0696F524B4AE830056E045 /* TZStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TZStudent.h; sourceTree = "<group>"; };
+		1B0696F624B4AE830056E045 /* TZStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TZStudent.m; sourceTree = "<group>"; };
+		1B0696F824B4AE9F0056E045 /* NSObject+addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+addition.h"; sourceTree = "<group>"; };
+		1B0696F924B4AE9F0056E045 /* NSObject+addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+addition.m"; sourceTree = "<group>"; };
 		1B57D8C924AA19AD0008F8AA /* OC对象的分类 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OC对象的分类"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B57D8CC24AA19AD0008F8AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				1B57D8CC24AA19AD0008F8AA /* main.m */,
+				1B0696F224B4AE750056E045 /* TZPerson.h */,
+				1B0696F324B4AE750056E045 /* TZPerson.m */,
+				1B0696F524B4AE830056E045 /* TZStudent.h */,
+				1B0696F624B4AE830056E045 /* TZStudent.m */,
+				1B0696F824B4AE9F0056E045 /* NSObject+addition.h */,
+				1B0696F924B4AE9F0056E045 /* NSObject+addition.m */,
 			);
 			path = "OC对象的分类";
 			sourceTree = "<group>";
@@ -119,6 +134,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0696F724B4AE830056E045 /* TZStudent.m in Sources */,
+				1B0696FA24B4AE9F0056E045 /* NSObject+addition.m in Sources */,
+				1B0696F424B4AE750056E045 /* TZPerson.m in Sources */,
 				1B57D8CD24AA19AD0008F8AA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

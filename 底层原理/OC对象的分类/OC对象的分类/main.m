@@ -8,6 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+#import "TZPerson.h"
+#import "TZStudent.h"
+#import "NSObject+addition.h"
+
+
+
+//struct NSObject_IMPL {
+//    Class isa;
+//};
+//
+//struct TZPerson_IMPL {
+//    struct NSObject_IMPL NSObject_IVARS;
+//
+//    int age;
+//};
+//
+//struct TZStuden_IMPL {
+//    struct TZPerson_IMPL TZPERSON_IVARS;
+//    int height;
+//};
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -32,9 +53,37 @@ int main(int argc, const char * argv[]) {
         NSLog(@"meta-class object %p ismetalClass:%hhd",
         objectMetaClass, class_isMetaClass(objectMetaClass));
         
+        /*
+        
+        struct TZStuden_IMPL student;
+        student.height = 10;
+        
+        struct TZPerson_IMPL person;
+        person.age = 100;
+        */
+        
+        
+        TZStudent *student = [[TZStudent alloc] init];
+        [student study];
+        
+        // 调用类方法时，回到元类中查找类方法，没有找到查找元类的父类，直到元类的基类，此时元类的基类的superclass指针指向的是NSObject的类对象，类对象中的对象方法此时也会被查找，这个正好有这个同名的对象方法，因此会调用该对象方法
+        [TZStudent performSelector:@selector(methodFromNSObject)];
+         
+         
+        /*
+        ((void (*)(id, SEL))(void *)objc_msgSend)((id)student, sel_registerName("study"));
+        ((void (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("TZStudent"), sel_registerName("die"));
+        */
     }
     return 0;
 }
+
+/*  isa指针
+ 
+ 
+ 
+ 
+ */
 
 
 /*
@@ -81,5 +130,14 @@ int main(int argc, const char * argv[]) {
  - isa指针 指向NSObject的元类对象
  - superClass指针
  - 类的类方法信息
+ 
+ # 三种对象之间的关系
+ 
+ instance                 class                     metaClass
+   isa                     isa                         isa
+ 其他成员变量              superClass                 superClass
+                         其他成员变量                 其他成员变量
+                          对象方法                     类方法
+ 
  
  */
